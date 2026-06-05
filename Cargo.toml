@@ -1,0 +1,9 @@
+[package]
+name = "rusty-jit"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cranelift = "0.131.2"
+syn = "2.0.117"
+tempfs = "0.13.11"
