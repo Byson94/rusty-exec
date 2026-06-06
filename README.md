@@ -30,3 +30,21 @@ cargo install --git https://github.com/Byson94/rusty-exec
 git clone https://github.com/Byson94/rusty-exec
 cargo build --release
 ```
+
+## Usage
+
+Execute a file:
+
+```bash
+rusty-exec example.rs
+```
+
+Execute a file along with modules:
+
+```bash
+# Both files and directories can be passed as modules
+# They can be included like so:
+# 
+# mod module;
+rusty-exec example.rs foo.rs baz/
+```
