@@ -6,8 +6,8 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
-cranelift = "0.131.2"
 log = "0.4.32"
 env_logger = "0.11.8"
 syn = { version = "2.0.117", features = ["full"] }
 tempfile = "3.27.0"
+inkwell = { version = "0.9.0", features = ["llvm17-0"] }

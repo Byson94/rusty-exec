@@ -1,5 +1,4 @@
 mod opts;
-mod jit;
 mod rustc;
 
 use clap::Parser;
@@ -21,16 +20,9 @@ fn main() {
     }
 
     // pass work to backend
-    if args.jit {
-        if let Err(e) = jit::execute_jit(args.file) {
-            log::error!("Failed to execute JIT: {e}");
-            std::process::exit(1);
-        }
-    } else {
-        if let Err(e) = rustc::execute_compile(args.file) {
-            log::error!("Failed to compile: {e}");
-            std::process::exit(1);
-        }
+    if let Err(e) = rustc::execute_compile(args.file, args.modules) {
+        log::error!("Failed rustc: {e}");
+        std::process::exit(1);
     }
 }
 

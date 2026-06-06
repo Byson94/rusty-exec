@@ -7,9 +7,8 @@ pub struct Args {
     /// The rust file to run
     pub file: PathBuf,
 
-    /// Use a faster, but less limiting backend
-    #[arg(short, long, global = true)]
-    pub jit: bool,
+    /// List of modules
+    pub modules: Option<Vec<PathBuf>>,
 
     /// Print debug information
     #[arg(short, long, global = true)]
